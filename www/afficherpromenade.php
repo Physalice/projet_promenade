@@ -1,31 +1,34 @@
 <?php
+// page profil d'une promenade finir la mise en page en html et css
+//liée à la liste de la première page
+//afficherpromenade.php
 
-//import de la database
 require_once ("DataBase.php");
-//creation de la connexion
-$database = new Database();
-//recuperer l'id depuis l'url
+$database = new DataBase();
 $id = $_GET["id"];
-//var_dump($id);
-// recuperation de la liste d'une promenade
-$ = $database->getChienById($id);
+// fiche technique de la promenade
+$rando = $database->getRandoById($id);
 
 ?>
 <html>
-<!--Affiche les info de forme agreable-->
+
     <header>
-        <link rel="stylesheet" href="style.css">
+       
     </header>
     <body>
-        <h1>Informations chien</h1>      
-            <p>Nom : <?php echo $chien->getNom() ?></p><br>           
-            <p>Race : <?php echo $promenade->getRace() ?></p><br>
-            <p>Age : <?php echo $promenade->getAge() ?></p><br>
-        <h1>Informations maitre</h1>   
-            <p>Nom : <?php echo $promenade->getNomMaitre() ?></p><br>
-            <p>Tel : <?php echo $promenade->getTelephone() ?></p><br>   
+        <h1>Randonnée n° <?php $rando->getId($id)?> </h1>      
+            <p>Nom : <?php echo $rando->getTitre()?></p><br> 
+            <p><?php echo $rando->getPays()?></p><br>          
+            <p>proposée par : <?php echo $rando->getAuteur()?></p><br>
+            <p>lieu : <?php echo $rando->getCp()?> - <?php echo $rando->getVille()?></p><br>
+            <p>Pays : <?php echo $rando->getPays()?></p><br>
+            <p>débute à : <?php echo $rando->getDepart()?></p>
+            <p> jusqu'à : <?php echo $rando->getArrivee()?></p><br>
+            
+            <p>les points forts de votre randonnées : <?php echo $rando->getItineraire()?></p><br>
+           
         <br><br>
-            <a class="buttonDelete" href="process-delete.php?id=<?php echo $promenade->getid(); ?>">Delete</a>
-            <a class="buttonDelete" href="update-promenade.php?id=<?php echo $chien->getid(); ?>">Update</a>
+            <a class="buttonDelete" href="process-delete.php?id=<?php echo $rando->getId(); ?>">Delete</a>
+            <a class="buttonUpdate" href="process-update.php?id=<?php echo $rando->getId(); ?>">Update</a>
     </body>
 </html>

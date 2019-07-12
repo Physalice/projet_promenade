@@ -1,5 +1,3 @@
-
-
 <?php
 //créer une nouvelle promenade sur insertRando de la DataBase
 
@@ -11,7 +9,7 @@ $ville = $_POST["ville"];
 $pays = $_POST["pays"];
 $depart = $_POST["depart"];
 $arrivee = $_POST["arrivee"];
-$files = $_POST["filess"];      //voir comment intégrer l'image
+$files = $_POST["files"];      //voir comment intégrer l'image
 $itineraire = $_POST["itineraire"];
 
 // Importer et mettre une valeur (instencier) une database
@@ -22,7 +20,7 @@ $database = new DataBase();
 $nouvelId = $database->insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire);
 
 
-header('Location: classPromenade.php?id='.$nouvelId); 
+header('Location: afficherpromenade.php?id='.$nouvelId); 
 
 ?>
 

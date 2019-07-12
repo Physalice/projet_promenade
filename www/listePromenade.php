@@ -1,9 +1,12 @@
 <?php
-//import de la database exe - 14
+//listePormenade.php
+//liste de vignette pour la première page
+//vérification OK
+// à faire HTML et CSS de mise en page
+
 require_once ("DataBase.php");
-//creation de la connexion
 $database = new DataBase();
-// recuperation de la liste des chiens
+
 $listePromenade = $database->getAllRando();
 ?>
     <html>
@@ -11,7 +14,7 @@ $listePromenade = $database->getAllRando();
             <link rel="stylesheet" href="style.css">
         </header>
         <body>
-            <a href="create-promenade.php">Nouvelle Promenade</a>
+            <a href="process-create.php"></a>
             <br>
             
             <h1>liste des promenades</h1>
@@ -19,7 +22,7 @@ $listePromenade = $database->getAllRando();
 
             <ul>
                 <?php
-                 foreach($listePromenades as $rando){ ?>
+                 foreach($listePromenade as $rando){ ?>
                 <li>
                 <?php echo "<a href =classPromenade.php?id=".$rando->getId().">";
                       echo "promenade numéro".$rando->getId()." : ".$rando->getTitre().$rando->getFiles() .$rando->getAuteur()." Créé par - ".$rando->getVille()."Ville - ".$rando->getPays()."Pays - ";
