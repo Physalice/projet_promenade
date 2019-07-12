@@ -45,3 +45,4 @@ SELECT p.id,
       p.ville, 
       p.pays
 FROM Promenade p
+WHERE p.id = 3;

@@ -13,11 +13,12 @@ class DataBase{
         $PARAM_utilisateur="adminPMD";          //nom de l'utilisateur crée dans initialscript.sql
         $PARAM_mot_passe="Calder@Vu@";         //mot de passe créée dans initialscript.sql
 
-        try{$this->connexion =new PDO(                         //utilisé l'attribut connection pour créer un nouveau PDO
-            "mysql:host=".$PARAM_hote.";dbname=".$PRAM_nom_bd,
+        try {
+            $this->connexion = new PDO(                         //utilisé l'attribut connection pour créer un nouveau PDO et ajouter que je travaille sur la charset=utf8
+            "mysql:host=".$PARAM_hote.";dbname=".$PRAM_nom_bd.";charset=utf8",
             $PARAM_utilisateur,                               //essaye de faire le code qui est dans le TRY
             $PARAM_mot_passe);
-        }catch(Exception $e){                                  //si try echoue je stock l'exception dans $e
+        } catch(Exception $e) {                                  //si try echoue je stock l'exception dans $e
             echo "Erreur : ".$e->getMessage()."<br/>";         //affiche le message d'erreur avec le code
             echo "N° : ".$e->getCode();                        //affiche le code de l'erreur
         }   
@@ -75,14 +76,26 @@ class DataBase{
         $pdoStatement->execute( array("idRando" => $id));
     }
 
-    //récupérer une promenade par son id de la listePromenade
+    //récupérer la listePromenade
     public function getAllRando($id){
             $pdoStatement = $this->connexion->prepare(
             "SELECT p.id, p.titre, p.files, p.auteur, p.ville, p.pays
              FROM Promenade p WHERE p.id = :idRAndo");
         $pdoStatement->execute(array("idRando" => $id));
     }
+    //récupérer une promenade par son id de la listePromenade
+    public function getRandoById($id){
+        $pdoStatement = $this->connexion->prepare(
+            "SELECT *
+             FROM Promenades 
+             WHERE id = :idRando"
+        );
+        $pdoStatement->execute(array("idRando" => $id)
+        );
+        $maRando = $pdoStatement->fetchObject("Promenade");
 
+        return $maRando;
+    }
 
 
     
