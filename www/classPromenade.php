@@ -2,7 +2,8 @@
 
 class Promenade{
     //Attributs
-    private $id;              //les ajout et les modification vont se fair sur id
+    // Attributs  specifiques aux chiens
+    private $id;
     private $titre;
     private $auteur;
     private $cp;
