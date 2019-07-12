@@ -16,7 +16,7 @@ $rando = $database->getRandoById($id);
        
     </header>
     <body>
-        <h1>Randonnée n° <?php $rando->getId($id)?> </h1>      
+        <h1>Randonnée n° <?php $rando->getId()?> </h1>      
             <p>Nom : <?php echo $rando->getTitre()?></p><br> 
             <p><?php echo $rando->getPays()?></p><br>          
             <p>proposée par : <?php echo $rando->getAuteur()?></p><br>

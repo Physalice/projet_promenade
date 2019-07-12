@@ -44,5 +44,5 @@ SELECT p.id,
       p.auteur,
       p.ville, 
       p.pays
-FROM Promenades p 
-WHERE p.id = :idRando
+FROM Promenade p
+WHERE p.id = 3;

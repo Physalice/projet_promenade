@@ -24,7 +24,7 @@ $listePromenade = $database->getAllRando();
                 <?php
                  foreach($listePromenade as $rando){ ?>
                 <li>
-                <?php echo "<a href =classPromenade.php?id=".$rando->getId().">";
+                <?php echo '<a href="afficherpromenade.php?id='.$rando->getId().'">';
                       echo "promenade numéro".$rando->getId()." : ".$rando->getTitre().$rando->getFiles() .$rando->getAuteur()." Créé par - ".$rando->getVille()."Ville - ".$rando->getPays()."Pays - ";
                       echo "</a>";
                 ?>    
