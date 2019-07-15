@@ -90,7 +90,7 @@ $maRando = $database->getRandoById($id);
                         <label for="itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                        <textarea class="overflow-y"id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
+                        <textarea id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
                     </div>
                 </div>
             </div>
