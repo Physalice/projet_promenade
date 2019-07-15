@@ -37,7 +37,7 @@ $rando = $database->getRandoById($id);
             <label for="Itineraire"> Itineraire </label><br>
             <input type="text" id="Itineraire" name="Itineraire" value="<?php echo $rando->getItineraire() ?>" required><br>
             <br>
-
+<!-----------width="48" height="48"------attribut de taille de l'image------>
 
             <br>
         
