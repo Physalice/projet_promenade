@@ -2,6 +2,7 @@
 //formulaire-create.php
 //formulaire de création d'une nouvelle promenade
 //HTML / CSS de fond ajout JO
+//PROBLÈME NE CHARGE PAS LA PHOTO ET NE S'ENREGISTRE PAS DANS LA BASE DE DONNÉE
 
 require_once("DataBase.php");
 $database = new DataBase();

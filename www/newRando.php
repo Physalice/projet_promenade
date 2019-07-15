@@ -1,11 +1,13 @@
 <?php
-//formulaire-create.php
-//formulaire de création d'une nouvelle promenade
-//HTML / CSS de fond ajout JO
-
-require_once("DataBase.php");
-$database = new DataBase();
-$maRando = $database->getRandoById($id);
+//updatePromenade.php?id=35
+require_once ("DataBase.php");
+//creation de la connexion
+$database = new Database();
+//recuperer l'id depuis l'url
+$id = $_GET["id"];
+//var_dump($id);
+// recuperation d'une promenade
+$rando = $database->getRandoById($id);
 ?>
 <!DOCTYPE html>
 
@@ -23,16 +25,17 @@ $maRando = $database->getRandoById($id);
     </head>
 
     <body>
-    <form action="process-create.php" method="POST" enctype="multipart/form-data">
+    <form action="process-update.php" method="post"enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $rando->getId() ?>"><br>
         <div class="button">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Mettre à jour">
         </div>
-        <h1>Proposez une randonnée</h1>
-        <p>Vous avez vécu une aventure extraordinaire, partagez-la...</p>
+        <h1>Mise à jour promenade</h1>
+        <p>Vous avez des changements à apporter à cette randonnée?</p>
             <div class="container">
                 <div class="row">
                     <div class="col-25">
-                        <label for="files">Choisissez votre image</label>
+                        <label for="files">Changez l'image</label>
                     </div>
                     <div class="col-75">
                         <input type="file" id="filesRando" name="files"required>
@@ -40,57 +43,57 @@ $maRando = $database->getRandoById($id);
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="titre">Nom: </label>
+                        <label for="Titre">Nom: </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="titreRando" name="titre" placeholder="titre de la randonnée" required>
+                    <input type="text" id="Titre" name="Titre" value="<?php echo $rando->getTitre() ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="auteur">Proposé par: </label>
+                        <label for="Auteur">Proposé par: </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="auteurRando" name="auteur" placeholder="votre pseudo" required>
+                    <input type="text" id="Auteur" name="Auteur"  value="<?php echo $rando->getAuteur() ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="cp">Lieu </label>
+                        <label for="Cp">Lieu </label>
                     </div>
                     <div class="col-75 d-flex align-content around">
-                        <input class="col-sm-2 col-md-2 cp mr-2 " type="text" id="cpRando" name="cp" placeholder="code postal" required>
-                        <input class="col-sm-4 col-md-10 mr-2" type="text" id="villeRando" name="ville" placeholder="ville" required>
+                        <input class="col-sm-2 col-md-2 cp mr-2" type="text" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
+                        <input class="col-sm-4 col-md-10 mr-2" type="text" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
                     </div>
                     <div class="col-25">
-                        <label for="pays"></label>
+                        <label for="Pays"></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="paysRando" name="pays" placeholder="pays" required>
+                    <input type="text" id="Pays" name="Pays"  value="<?php echo $rando->getPays() ?>" required><br>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="depart">au départ de </label>
+                        <label for="Depart">au départ de </label>
                     </div>
                     <div class="col-75">
-                        <input class="mt-2" type="text" id="departRando" name="depart" placeholder="début de l'aventure" required>
+                    <input type="text" id="Depart" name="Depart" value="<?php echo $rando->getDepart() ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="arrivee">et se termine à  </label>
+                        <label for="Arrivee">et se termine à  </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="arriveeRando" name="arrivee" placeholder="fin de l'aventure" required>
+                    <input type="text" id="Arrivee" name="Arrivee" value="<?php echo $rando->getArrivee() ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="itineraire">Descriptif</label>
+                        <label for="Itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                        <textarea class="overflow-y"id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
+                    <textarea type="text" id="Itineraire" name="Itineraire" value="<?php echo $rando->getItineraire() ?>" required></textarea>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 //afficherpromenade.php
 // page profil d'une promenade finir la mise en page en html et css
 //liée à la liste de la première page
-//afficherpromenade.php
+//problème de connexion à la base de donnée avec le formulaire create
 
 require_once ("DataBase.php");
 $database = new DataBase();
