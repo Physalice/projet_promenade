@@ -6,4 +6,6 @@
 !/logs/apache2/.gitkeep
 /www/uploads/*
 !/www/uploads/.gitkeep
+/www/image/*
+!/www/image/.gitkeep
 
