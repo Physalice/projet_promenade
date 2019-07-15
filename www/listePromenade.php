@@ -1,6 +1,6 @@
 <?php
 //listePormenade.php
-//liste de vignette pour la première page
+//liste pour la première page essayer de faire des vignettes
 //vérification OK
 // à faire HTML et CSS de mise en page
 
@@ -9,6 +9,7 @@ $database = new DataBase();
 
 $listePromenade = $database->getAllRando();
 ?>
+<!DOCTYPE html>
     <html>
         <header>
             <link rel="stylesheet" href="style.css">
@@ -33,5 +34,8 @@ $listePromenade = $database->getAllRando();
             </ul>
         </body>
     </html>
+
+    
         
 
+   

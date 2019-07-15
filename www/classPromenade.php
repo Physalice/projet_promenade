@@ -1,5 +1,5 @@
 <?php
-// classPromenade.php
+//classPromenade.php
 class Promenade{
     //Attributs
     // Attributs  specifiques aux chiens

@@ -1,5 +1,5 @@
 <?php
-//DataBase.php finie
+//DataBase.php 
 require_once ("classPromenade.php");
 
 class DataBase{
@@ -33,7 +33,7 @@ class DataBase{
     }
 
     //paramettrage des valeur pour l'insertion d'une nouvelle promenade
-    public function insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $img_pass, $itineraire){
+    public function insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire){
         $pdoStatement = $this-> connexion-> prepare("INSERT INTO Promenades (titre, auteur, cp, ville, pays, depart, arrivee, files, itineraire)  
                                                      VALUES (:paramTitre, :paramAuteur, :paramCp, :paramVille, :paramPays, :paramDepart, :paramArrivee, :paramFiles, :paramItineraire)");
         $pdoStatement-> execute(array("paramTitre"=>$titre, 
@@ -81,13 +81,13 @@ class DataBase{
 //récupérer toutes les promenades
     public function getAllRando(){
             $pdoStatement = $this->connexion->prepare(
-            "SELECT p.id, p.titre, p.files, p.auteur, p.ville, p.pays
-             FROM Promenades p");
+            "SELECT id, titre, files, auteur, ville, pays, itineraire
+             FROM Promenades");
         $pdoStatement->execute();
         $listePromenade = $pdoStatement->fetchAll(PDO::FETCH_CLASS, "Promenade");
         return $listePromenade;
     }
-    //récupérer une promenade par son id de la listePromenade
+    //affiche le profil d'une promenade -> récupération de la liste
     public function getRandoById($id){
         $pdoStatement = $this->connexion->prepare(
             "SELECT *

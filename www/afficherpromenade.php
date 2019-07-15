@@ -1,4 +1,5 @@
 <?php
+//afficherpromenade.php
 // page profil d'une promenade finir la mise en page en html et css
 //liée à la liste de la première page
 //afficherpromenade.php
@@ -7,7 +8,7 @@ require_once ("DataBase.php");
 $database = new DataBase();
 $id = $_GET["id"];
 // fiche technique de la promenade
-$rando = $database->getRandoById($id);
+$rando = $database-> getRandoById($id);
 
 ?>
 <html>
@@ -16,7 +17,8 @@ $rando = $database->getRandoById($id);
        
     </header>
     <body>
-        <h1>Randonnée n° <?php $rando->getId($id)?> </h1>      
+        <h1>Randonnée n° <?php echo $rando->getId()?> </h1>     
+            <img src="<?php echo $rando->getFiles(); ?>" alt="image promenade"> 
             <p>Nom : <?php echo $rando->getTitre()?></p><br> 
             <p><?php echo $rando->getPays()?></p><br>          
             <p>proposée par : <?php echo $rando->getAuteur()?></p><br>

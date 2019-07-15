@@ -46,3 +46,9 @@ SELECT p.id,
       p.pays
 FROM Promenade p
 WHERE p.id = 3;
+/* crée un lien entre le USER et l'image de profil
+CREATE TABLE profileimg(
+  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  USERID INT(11) NOT NULL, 
+  STATUS(11) INT NOT NULL
+);
