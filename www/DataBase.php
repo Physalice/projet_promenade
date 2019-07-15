@@ -53,21 +53,22 @@ class DataBase{
     }
 
 // changer les donnée de classPromenade  
-    public function updateRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $img_pass, $itineraire){
+    public function updateRando($id, $titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire){
         $pdoStatement = $this-> connexion-> prepare("UPDATE Promenades 
                                                      SET titre = :titreRando, auteur =:auteurRando, cp = :cpRando, ville =:villeRando, pays =:paysRando, depart =:departRando, arrivee =:arriveeRando, files =:filesRando, itineraire =:itineraireRando 
                                                      WHERE id = :idRando");
         //execution de la requête et mapping des valeurs
-        $pdoStatement-> execute(array("paramTitre"=>$titre, 
-                                        "paramAuteur"=>$auteur, 
-                                        "paramCp"=>$cp, 
-                                        "paramVille"=>$ville, 
-                                        "paramPays"=>$pays, 
-                                        "paramDepart"=>$depart, 
-                                        "paramArrivee"=>$arrivee, 
-                                        "paramFiles"=>$files, 
-                                        "paramItineraire"=>$itineraire));
-        var_dump($pdoStatement->errorInfo());    
+        $pdoStatement-> execute(array("titreRando"=>$titre, 
+                                        "auteurRando"=>$auteur, 
+                                        "cpRando"=>$cp, 
+                                        "villeRando"=>$ville, 
+                                        "paysRando"=>$pays, 
+                                        "departRando"=>$depart, 
+                                        "arriveeRando"=>$arrivee, 
+                                        "filesRando"=>$files, 
+                                        "itineraireRando"=>$itineraire,
+                                        "idRando" => $id));
+        //var_dump($pdoStatement->errorInfo());    
     }
 
 //effacer une promenade

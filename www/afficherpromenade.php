@@ -16,7 +16,7 @@ $rando = $database->getRandoById($id);
        
     </header>
     <body>
-        <h1>Randonnée n° <?php $rando->getId()?> </h1>      
+        <h1>Randonnée n° <?php $rando->getId($id)?> </h1>      
             <p>Nom : <?php echo $rando->getTitre()?></p><br> 
             <p><?php echo $rando->getPays()?></p><br>          
             <p>proposée par : <?php echo $rando->getAuteur()?></p><br>
@@ -29,6 +29,6 @@ $rando = $database->getRandoById($id);
            
         <br><br>
             <a class="buttonDelete" href="process-delete.php?id=<?php echo $rando->getId(); ?>">Delete</a>
-            <a class="buttonUpdate" href="process-update.php?id=<?php echo $rando->getId(); ?>">Update</a>
+            <a class="buttonUpdate" href="updatePromenade.php?id=<?php echo $rando->getId(); ?>">Update</a>
     </body>
 </html>

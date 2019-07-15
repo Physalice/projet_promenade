@@ -34,10 +34,9 @@ $maRando = $database->getRandoById($id);
             <label for="files">Insérez une image</label><br>
             <input type="text" id="filesRando" name="files" placeholder="votre image" required><br>
             <label for="itineraireRando">Descriptif</label><br>
-            <textarea name="itineraire"rows="5" cols="30" maxlength="255" placeholder="Vous pouvez écrire ici."></textarea><br>
+            <textarea name="itineraire"rows="5" cols="30" maxlength="255" placeholder="les points forts de votre proposition"></textarea><br><br><br>
 
-            <br><br>
-
+            
             <input type="submit" value="Valider">
         </form>
         
