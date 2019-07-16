@@ -24,11 +24,10 @@ $rando = $database->getRandoById($id);
     <body>
     <form action="process-update.php" method="post"enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $rando->getId() ?>"><br>
-        <div class="button">
-            <input type="submit" value="Mettre à jour">
-        </div>
-        <h1>Mise à jour promenade</h1>
-        <p>Vous avez des changements à apporter à cette randonnée?</p>
+            <div class="text-justify text-center">
+                <h1>Mise à jour de la randonnée</h1>
+                <p>Vous avez des changements à apporter à cette randonnée?</p>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-25">
@@ -54,21 +53,25 @@ $rando = $database->getRandoById($id);
                     <input type="text" id="Auteur" name="Auteur"  value="<?php echo $rando->getAuteur() ?>" required>
                     </div>
                 </div>
+
+
                 <div class="row">
                     <div class="col-25">
                         <label for="Cp">Lieu </label>
                     </div>
-                    <div class="col-75 d-flex align-content around">
-                        <input class="col-sm-2 col-md-2 cp mr-2" type="text" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
-                        <input class="col-sm-4 col-md-10 mr-2" type="text" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
+                    <div class="col-75">
+                        <input type="text" class="col-sm-2 col-md-2" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
+                        <?php echo "  --  " ?>
+                        <input type="text" class="col-sm-4 col-md-9" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
                     </div>
                     <div class="col-25">
                         <label for="Pays"></label>
                     </div>
                     <div class="col-75">
-                    <input type="text" id="Pays" name="Pays"  value="<?php echo $rando->getPays() ?>" required><br>
+                    <input type="text"  class="col-sm-4 col-md-12" id="Pays" name="Pays"  value="<?php echo $rando->getPays() ?>" required><br>
                     </div>
                 </div>
+               
                 <div class="row">
                     <div class="col-25">
                         <label for="Depart">au départ de </label>
@@ -85,14 +88,18 @@ $rando = $database->getRandoById($id);
                     <input type="text" id="Arrivee" name="Arrivee" value="<?php echo $rando->getArrivee() ?>" required>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
                         <label for="Itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                    <textarea type="text" id="Itineraire" name="Itineraire" value="<?php echo $rando->getItineraire() ?>" required></textarea>
+                        <textarea type="text" id="Itineraire" name="Itineraire" value="<?php echo $rando->getItineraire() ?>" required></textarea>
                     </div>
                 </div>
+            </div><!-----fin container---->
+            <div class="button">
+                <input type="submit" value="Mettre à jour">
             </div>
         </form> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

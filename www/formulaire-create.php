@@ -25,21 +25,21 @@ $maRando = $database->getRandoById($id);
 
     <body>
     <form action="process-create.php" method="POST" enctype="multipart/form-data">
-        <div class="button">
-            <input type="submit" value="Submit">
-        </div>
+        
+        <div class="text-justify text-center">
         <h1>Proposez une randonnée</h1>
         <p>Vous avez vécu une aventure extraordinaire, partagez-la...</p>
+        </div>
             <div class="container">
-                <div class="row">
+                <div class="row ">
                     <div class="col-25">
                         <label for="files">Choisissez votre image</label>
                     </div>
                     <div class="col-75">
-                        <input type="file" id="filesRando" name="files"required>
+                        <input type="file" id="files" name="files"required>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="col-25">
                         <label for="titre">Nom: </label>
                     </div>
@@ -55,27 +55,30 @@ $maRando = $database->getRandoById($id);
                         <input type="text" id="auteurRando" name="auteur" placeholder="votre pseudo" required>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
                         <label for="cp">Lieu </label>
                     </div>
-                    <div class="col-75 d-flex align-content around">
-                        <input class="col-sm-2 col-md-2 cp mr-2 " type="text" id="cpRando" name="cp" placeholder="code postal" required>
-                        <input class="col-sm-4 col-md-10 mr-2" type="text" id="villeRando" name="ville" placeholder="ville" required>
+                    <div class="col-75">
+                        <input type="text" class="col-sm-2 col-md-2" id="cpRando" name="cp" placeholder="cp" required>
+                        <?php echo "  --  " ?>
+                        <input type="text" class="col-sm-4 col-md-9" id="villeRando" name="ville" placeholder="ville" required>
                     </div>
                     <div class="col-25">
                         <label for="pays"></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="paysRando" name="pays" placeholder="pays" required>
+                        <input type="text" class= "col-sm-4 col-md-12" id="paysRando" name="pays" placeholder="pays" required>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-25">
+                    <div class="col-25 ">
                         <label for="depart">au départ de </label>
                     </div>
-                    <div class="col-75">
-                        <input class="mt-2" type="text" id="departRando" name="depart" placeholder="début de l'aventure" required>
+                    <div class="col-75  mt-6 mb-0">
+                        <input type="text" id="departRando" name="depart" placeholder="début de l'aventure" required>
                     </div>
                 </div>
                 <div class="row">
@@ -91,9 +94,12 @@ $maRando = $database->getRandoById($id);
                         <label for="itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
+                        <textarea class="text-justify"id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
                     </div>
                 </div>
+            </div><!-----fin container---->
+            <div class="button">
+                <input type="submit" value="Submit">
             </div>
         </form> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
