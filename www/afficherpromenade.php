@@ -17,9 +17,9 @@ $rando = $database-> getRandoById($id);
        
     </header>
     <body>
-        <h1>Randonnée n° <?php echo $rando->getId()?> </h1>     
+        <h1>Randonnée n° <?php echo $rando->getId()?></h1>     
 
-            <img src="<?php echo $rando->getFiles(); ?>" alt="image promenade"> 
+            <img src="<?php echo $rando->getFiles();?>" alt="image promenade"> 
             
             <p>Nom : <?php echo $rando->getTitre()?></p><br> 
             <p><?php echo $rando->getPays()?></p><br>          

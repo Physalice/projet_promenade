@@ -2,7 +2,7 @@
 //formulaire-create.php
 //formulaire de création d'une nouvelle promenade
 //HTML / CSS de fond ajout JO
-//PROBLÈME NE CHARGE PAS LA PHOTO ET NE S'ENREGISTRE PAS DANS LA BASE DE DONNÉE
+
 
 require_once("DataBase.php");
 $database = new DataBase();
@@ -31,6 +31,9 @@ $maRando = $database->getRandoById($id);
         <p>Vous avez vécu une aventure extraordinaire, partagez-la...</p>
         </div>
             <div class="container">
+                <div class="button">
+                    <input type="submit" value="Submit">
+                </div>
                 <div class="row ">
                     <div class="col-25">
                         <label for="files">Choisissez votre image</label>
@@ -97,10 +100,9 @@ $maRando = $database->getRandoById($id);
                         <textarea id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
                     </div>
                 </div>
+                
             </div><!-----fin container---->
-            <div class="button">
-                <input type="submit" value="Submit">
-            </div>
+            
         </form> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

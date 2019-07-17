@@ -31,7 +31,7 @@ $rando = $database->getRandoById($id);
             <div class="container">
                 
               
-                <div class="row">
+                <div class="row d-flex justify-content-center m-6 p-3">
                    <div class="file">
                         <img src="<?php echo $rando->getFiles()?>">
                     </div>
@@ -81,14 +81,15 @@ $rando = $database->getRandoById($id);
                     </div>
                 </div>
                
-                <div class="row">
-                    <div class="col-25 df-flex align-self-end mb-3">
+                <div class="row ">
+                    <div class="col-25 mt-6">
                         <label for="Depart">au départ de </label>
                     </div>
-                    <div class="col-75">
+                    <div class="col-75 df-flex align-self-end mb-2">
                     <input type="text" id="Depart" name="Depart" value="<?php echo $rando->getDepart() ?>" required>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
                         <label for="Arrivee">et se termine à  </label>
@@ -106,10 +107,13 @@ $rando = $database->getRandoById($id);
                         <textarea type="text" id="Itineraire" name="Itineraire" required><?php echo $rando->getItineraire() ?></textarea>
                     </div>
                 </div>
+
+                <div class="button">
+                    <input type="submit" value="Mettre à jour">
+                </div>
+                <br><br>
             </div><!-----fin container---->
-            <div class="button">
-                <input type="submit" value="Mettre à jour">
-            </div>
+            
         </form> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

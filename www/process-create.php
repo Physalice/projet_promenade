@@ -58,7 +58,6 @@ $database = new DataBase();
 
 $nouvelId = $database->insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $fileDestination, $itineraire);
 
-
 header('Location: afficherpromenade.php?id='.$nouvelId); 
 
 ?>
