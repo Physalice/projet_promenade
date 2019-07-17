@@ -29,6 +29,15 @@ $rando = $database->getRandoById($id);
                 <p>Vous avez des changements à apporter à cette randonnée?</p>
             </div>
             <div class="container">
+                
+              
+                <div class="row">
+                   <div class="file">
+                        <img src="<?php echo $rando->getFiles()?>">
+                    </div>
+                </div>
+                
+                
                 <div class="row">
                     <div class="col-25">
                         <label for="files">Changez l'image</label>
@@ -56,24 +65,24 @@ $rando = $database->getRandoById($id);
 
 
                 <div class="row">
-                    <div class="col-25">
+                    <div class="col-25 d-flex align-self-end">
                         <label for="Cp">Lieu </label>
                     </div>
-                    <div class="col-75">
-                        <input type="text" class="col-sm-2 col-md-2" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
+                    <div class="col-75 d-flex align-items-end mb-2">
+                        <input type="text" class="col-sm-2 cp" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
                         <?php echo "  --  " ?>
-                        <input type="text" class="col-sm-4 col-md-9" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
+                        <input type="text" class="col-sm ville" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
                     </div>
                     <div class="col-25">
                         <label for="Pays"></label>
                     </div>
                     <div class="col-75">
-                    <input type="text"  class="col-sm-4 col-md-12" id="Pays" name="Pays"  value="<?php echo $rando->getPays() ?>" required><br>
+                    <input type="text"  class="col-sm-12" id="Pays" name="Pays"  value="<?php echo $rando->getPays() ?>" required><br>
                     </div>
                 </div>
                
                 <div class="row">
-                    <div class="col-25">
+                    <div class="col-25 df-flex align-self-end mb-3">
                         <label for="Depart">au départ de </label>
                     </div>
                     <div class="col-75">
@@ -94,7 +103,7 @@ $rando = $database->getRandoById($id);
                         <label for="Itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                        <textarea type="text" id="Itineraire" name="Itineraire" value="<?php echo $rando->getItineraire() ?>" required></textarea>
+                        <textarea type="text" id="Itineraire" name="Itineraire" required><?php echo $rando->getItineraire() ?></textarea>
                     </div>
                 </div>
             </div><!-----fin container---->

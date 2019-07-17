@@ -25,18 +25,18 @@ $listePromenade = $database->getAllRando();
     </head>
 
     <body>
+        
         <a href="process-create.php"></a>
-        <div class="container-fluid ">
-            <div class="row align-item-center">   
+        <div class="container-fluid">
+            <div class="row">   
              <?php foreach($listePromenade as $rando){ ?>
                 <div class="col-md-6 liste">
-                    <?php echo '<a href="afficherpromenade.php?id='.$rando->getId().'"></a>';
-                            echo "promenade numéro".$rando->getId();
-                            echo $rando->getTitre();?>
-                            <img src="<?php echo $rando->getFiles(); ?>" alt="image promenade">
+                    <?php echo '<a href="afficherpromenade.php?id='.$rando->getId().'"></a>'?>
+                            <h1><?php echo $rando->getTitre();?></h1>
+                            <img src="<?php echo $rando->getFiles();?>" alt="image promenade"><br>
                             <?php 
                             echo "Créé par: " .$rando->getAuteur();
-                            echo "Lieu" .$rando->getVille().$rando->getPays();
+                            echo "Lieu: " .$rando->getVille() ." " .$rando->getPays();
                             echo $rando->getItineraire();
                             
                         ?>    

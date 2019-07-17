@@ -50,7 +50,7 @@ p{
 
 }
 
-.container {
+.container, .container-fluid{
   border-radius: 5px;
   background-color: white;
   padding: 20px;
@@ -62,16 +62,25 @@ p{
   float: left;
   width: 25%;
   margin: 6px;
+
  
+}
+.ville{
+  margin-left: 6px;
+}
+.cp{
+  margin-right: 6px;
 }
 
 .col-75 {
   float: left;
   width: 70%;
-  
+
+
 }
 .liste{
 text-decoration: none
+
 }
 
 
@@ -81,6 +90,7 @@ text-decoration: none
   display: table;
   clear: both;
 }
+
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {

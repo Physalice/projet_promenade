@@ -99,6 +99,17 @@ class DataBase{
 
         return $maRando;
     }
+    /*
+    //affiche un élément de la liste 
+    public function getRando($id){
+        $pdoStatement = $this->connexion->prepare(
+        "SELECT id, titre, files, auteur, ville, pays, itineraire
+        FROM Promenades");
+        $pdoStatement->execute();
+        $listePromenade = $pdoStatement->fetchObject("Promenade");
+        return $listePromenade;
+    }
+    */
 
 
     

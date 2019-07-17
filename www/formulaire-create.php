@@ -57,19 +57,19 @@ $maRando = $database->getRandoById($id);
                 </div>
 
                 <div class="row">
-                    <div class="col-25">
+                    <div class="col-25 d-flex align-self-end">
                         <label for="cp">Lieu </label>
                     </div>
-                    <div class="col-75">
-                        <input type="text" class="col-sm-2 col-md-2" id="cpRando" name="cp" placeholder="cp" required>
-                        <?php echo "  --  " ?>
-                        <input type="text" class="col-sm-4 col-md-9" id="villeRando" name="ville" placeholder="ville" required>
+                    <div class="col-75 d-flex align-items-end mb-2">
+                        <input type="text" class="col-sm-2 cp" id="cpRando" name="cp" placeholder="cp" required>
+                        <?php echo "--" ?>
+                        <input type="text" class="col-sm ville" id="villeRando" name="ville" placeholder="ville" required>
                     </div>
                     <div class="col-25">
                         <label for="pays"></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" class= "col-sm-4 col-md-12" id="paysRando" name="pays" placeholder="pays" required>
+                        <input type="text" class= "col-sm-12" id="paysRando" name="pays" placeholder="pays" required>
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@ $maRando = $database->getRandoById($id);
                     <div class="col-25 ">
                         <label for="depart">au départ de </label>
                     </div>
-                    <div class="col-75  mt-6 mb-0">
+                    <div class="col-75  df-flex align-self-end mb-3 ">
                         <input type="text" id="departRando" name="depart" placeholder="début de l'aventure" required>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ $maRando = $database->getRandoById($id);
                         <label for="itineraire">Descriptif</label>
                     </div>
                     <div class="col-75">
-                        <textarea class="text-justify"id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
+                        <textarea id="itineraire" name="itineraire" placeholder="les points forts de votre aventure" style="height:200px"></textarea>
                     </div>
                 </div>
             </div><!-----fin container---->
