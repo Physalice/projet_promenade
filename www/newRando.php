@@ -40,9 +40,9 @@ $listePromenade = $database->getAllRando();
                      <h1><?php echo $rando->getTitre()?></h1>
                      <p><?php  echo "Lieu: " .$rando->getVille() ." " .$rando->getPays()?></p>
                      <p><?php echo $rando->getItineraire()?></p>
-                     <p class="auteur"><?php echo "Créé par: " .$rando->getAuteur()?></p> 
+                     <p class="auteur"><?php echo "Créé par: " .$rando->getAuteur()?> 
                     
-                     <p><button>Choisir</button></p>
+                     <p><button>Contact</button></p>
                    </div> 
            <?php } ?>
 

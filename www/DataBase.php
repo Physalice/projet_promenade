@@ -35,7 +35,7 @@ class DataBase{
     //paramettrage des valeur pour l'insertion d'une nouvelle promenade
     public function insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire){
         $pdoStatement = $this-> connexion-> prepare("INSERT INTO Promenades (titre, auteur, cp, ville, pays, depart, arrivee, files, itineraire)  
-                                                     VALUES (:paramTitre, :paramAuteur, :paramCp, :paramVille, :paramPays, :paramDepart, :paramArrivee, :paramFiles, :paramItineraire)");
+                                                     VALUES (:paramTitre, :paramAuteur, :paramCp, :paramVille, :paramPays, :paramDepart, :paramArrivee, :paramFiles, :paramItineraire);");
         $pdoStatement-> execute(array("paramTitre"=>$titre, 
                                         "paramAuteur"=>$auteur, 
                                         "paramCp"=>$cp, 
@@ -99,6 +99,17 @@ class DataBase{
 
         return $maRando;
     }
+    /*
+    //affiche un élément de la liste 
+    public function getRando($id){
+        $pdoStatement = $this->connexion->prepare(
+        "SELECT id, titre, files, auteur, ville, pays, itineraire
+        FROM Promenades");
+        $pdoStatement->execute();
+        $listePromenade = $pdoStatement->fetchObject("Promenade");
+        return $listePromenade;
+    }
+    */
 
 
     
