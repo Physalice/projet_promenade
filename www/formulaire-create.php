@@ -30,10 +30,15 @@ $maRando = $database->getRandoById($id);
         <h1>Proposez une randonnée</h1>
         <p>Vous avez vécu une aventure extraordinaire, partagez-la...</p>
         </div>
+        
             <div class="container">
-                <div class="button">
-                    <input type="submit" value="Submit">
+
+                <div class="row">
+                    <div class="button col-sm-12">
+                        <input type="submit" value="Submit">
+                    </div>
                 </div>
+
                 <div class="row ">
                     <div class="col-25">
                         <label for="files">Choisissez votre image</label>
@@ -42,6 +47,7 @@ $maRando = $database->getRandoById($id);
                         <input type="file" id="files" name="files"required>
                     </div>
                 </div>
+
                 <div class="row ">
                     <div class="col-25">
                         <label for="titre">Nom: </label>
@@ -50,6 +56,7 @@ $maRando = $database->getRandoById($id);
                         <input type="text" id="titreRando" name="titre" placeholder="titre de la randonnée" required>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
                         <label for="auteur">Proposé par: </label>
@@ -64,7 +71,7 @@ $maRando = $database->getRandoById($id);
                         <label for="cp">Lieu </label>
                     </div>
                     <div class="col-75 d-flex align-items-end mb-2">
-                        <input type="text" class="col-sm-2 cp" id="cpRando" name="cp" placeholder="cp" required>
+                        <input type="text" class="col-sm-1 cp" id="cpRando" name="cp" placeholder="cp" required>
                         <?php echo "--" ?>
                         <input type="text" class="col-sm ville" id="villeRando" name="ville" placeholder="ville" required>
                     </div>

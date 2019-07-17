@@ -142,7 +142,7 @@ button:hover, a:hover {
   }
 }
 @media screen and (max-width: 600px) {
-  img {
+  img{
     width: 70%;
     margin-top: 0;
   }

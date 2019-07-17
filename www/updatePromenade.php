@@ -69,7 +69,7 @@ $rando = $database->getRandoById($id);
                         <label for="Cp">Lieu </label>
                     </div>
                     <div class="col-75 d-flex align-items-end mb-2">
-                        <input type="text" class="col-sm-2 cp" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
+                        <input type="text" class="col-sm-1 cp" id="Cp" name="Cp" value="<?php echo $rando->getCp() ?>" required>
                         <?php echo "  --  " ?>
                         <input type="text" class="col-sm ville" id="Ville" name="Ville" value="<?php echo $rando->getVille() ?>" required>
                     </div>
