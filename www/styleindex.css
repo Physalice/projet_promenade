@@ -1,0 +1,35 @@
+.background-section1{
+    background-image: url("image/P14.jpg"); 
+    background-size: cover;
+}
+
+.buttonDelete{
+    margin-bottom: 30px;
+}
+
+.buttonUpdate{
+    margin-bottom: 30px;
+}
+
+.vignette{
+    text-align: center;
+}
+
+.logo1{
+    width: 40%;            
+}              
+.dp1{                  
+    margin-right: 50%;
+}
+
+.mmenu{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.logo a{
+    padding-right: 5px;
+    margin-right: 0px;
+}
+p{
+    font-size: 20px;
+}

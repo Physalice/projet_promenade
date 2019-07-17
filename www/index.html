@@ -1,16 +1,3 @@
-<?php
-//afficherpromenade.php
-// page profil d'une promenade finir la mise en page en html et css
-//liée à la liste de la première page
-//afficherpromenade.php
-
-require_once ("DataBase.php");
-$database = new DataBase();
-$id = $_GET["id"];
-// fiche technique de la promenade
-$rando = $database-> getRandoById($id);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +48,6 @@ $rando = $database-> getRandoById($id);
         p{
             font-size: 20px;
         }
-        
     </style>
     <body>
         <!--section 1 jc-->
@@ -79,23 +65,10 @@ $rando = $database-> getRandoById($id);
         <!-- fin section 1 -->
 
          <!-- section 2 -->
-        <section class="container-fluid background-section2">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="d-flex flex-column vignette">
-                            <p><?php $rando->getId()?></p> 
-                            <h1> <?php echo $rando->getTitre()?></h1>
-                            <img src="<?php echo $rando->getFiles()?>" alt="image promenade" class="img-fluid">
-                            <h3>lieu : <?php echo $rando->getCp()?> - <?php echo $rando->getVille()?></h3>
-                            <h3><?php echo $rando->getPays()?></h3>                           
-                            <h3>Départ : <p><?php echo $rando->getDepart()?></p></h3>
-                            <h3>Arrivée : <p><?php echo $rando->getArrivee()?></p></h3>
-                            <h3>Infos : <p><?php echo $rando->getItineraire()?></p></h3> 
-                            <h2>Proposé par :<?php echo $rando->getAuteur()?>
-                        </div>                        
-                    </div>
-                </div>        
-        </section>                      
+        
+         
+
+         
           <!-- fin section 2-->  
 
           <!-- debut section 3-->  
@@ -149,9 +122,3 @@ $rando = $database-> getRandoById($id);
 
    
 </html>            
-                
-            
-    
-               
-                       
-       
