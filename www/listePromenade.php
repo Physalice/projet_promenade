@@ -25,33 +25,26 @@ $listePromenade = $database->getAllRando();
     </head>
 
     <body>
-
-        <div class="card">
-           <div class="row">
-                <div class="col-md" 
-           <a href="process-create.php"> </a>
-            <?php foreach($listePromenade as $rando){
-                
-        
-                     echo "<div class='liste'>";
-                     echo '<a href="afficherpromenade.php?id='.$rando->getId().'"></a>'; ?>
-                     <div class="card">
-                     <img src=<?php echo $rando->getFiles()?> img.jpg" alt="montagne" style="width:100%">
-                     <h1><?php echo $rando->getTitre()?></h1>
-                     <p><?php  echo "Lieu: " .$rando->getVille() ." " .$rando->getPays()?></p>
-                     <p><?php echo $rando->getItineraire()?></p>
-                     <p class="auteur"><?php echo "Créé par: " .$rando->getAuteur()?></p> 
                     
-                     <p><button>Choisir</button></p>
-                   </div> 
-           <?php } ?>
-
-                </div> 
-            </div>
-        </div>
-
- 
-
+        <section>
+           <a href="process-create.php"> </a>
+            <?php foreach($listePromenade as $rando){ ?>
+                <div class='card'>
+                    <div class='row'>
+                        <div class='col-md liste' >
+                           
+                            <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
+                            <h1><?php echo $rando->getTitre() ?></h1>
+                            <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
+                            <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
+                            <a href='afficherpromenade.php?id=' <?php $rando->getId()?> ><p><button>Choisir</button></p></a>
+                             
+                       </div> 
+                    </div> 
+                </div>
+             <?php } ?>
+            
+            </section>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
