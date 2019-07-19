@@ -103,6 +103,7 @@ text-decoration: none
   margin: auto;
   text-align: center;
   font-family: arial;
+  display: inline-flex
 }
 
 .title {

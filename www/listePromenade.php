@@ -29,9 +29,9 @@ $listePromenade = $database->getAllRando();
         <section>
            <a href="process-create.php"> </a>
             <?php foreach($listePromenade as $rando){ ?>
-                <div class='card'>
+                <div class='card col-sm-6 col-md-4 m-3 p-3'>
                     <div class='row'>
-                        <div class='col-md liste' >
+                        <div class=' liste' >
                            
                             <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
                             <h1><?php echo $rando->getTitre() ?></h1>
