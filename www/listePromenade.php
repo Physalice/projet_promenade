@@ -57,9 +57,25 @@ $listePromenade = $database->getAllRando();
                      <p><?php echo $rando->getItineraire()?></p>
                      <p class="auteur"><?php echo "Créé par: " .$rando->getAuteur()?></p> 
                     
-                     <p><button>Choisir</button></p>
-                   </div> 
-           <?php } ?>
+        <section>
+           <a href="process-create.php"> </a>
+            <?php foreach($listePromenade as $rando){ ?>
+                <div class='card col-sm-6 col-md-4 m-3 p-3'>
+                    <div class='row'>
+                        <div class=' liste' >
+                           
+                            <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
+                            <h1><?php echo $rando->getTitre() ?></h1>
+                            <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
+                            <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
+                            <a href='afficherpromenade.php'<?php $rando->getId()?> ><p><button>Choisir</button></p></a>
+                             
+                       </div> 
+                    </div> 
+                </div>
+             <?php } ?>
+            
+            </section>
 
                 </div> 
             </div>
