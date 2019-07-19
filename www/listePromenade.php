@@ -37,7 +37,7 @@ $listePromenade = $database->getAllRando();
                             <h1><?php echo $rando->getTitre() ?></h1>
                             <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
                             <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
-                            <a href='afficherpromenade.php?id=' <?php $rando->getId()?> ><p><button>Choisir</button></p></a>
+                            <a href='afficherpromenade.php'<?php $rando->getId()?> ><p><button>Choisir</button></p></a>
                              
                        </div> 
                     </div> 
