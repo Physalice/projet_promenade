@@ -20,49 +20,12 @@ $rando = $database-> getRandoById($id);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="styleRando.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
-    <!-- section 1 jc-->
-    <style>         
-        
-        .background-section1{
-            background-image: url("image/P14.jpg"); 
-            background-size: cover;
-        }
-
-        .buttonDelete{
-            margin-bottom: 30px;
-        }
-
-        .buttonUpdate{
-            margin-bottom: 30px;
-        }
     
-        .vignette{
-            text-align: center;
-        }
-
-        .logo1{
-            width: 40%;            
-        }              
-        .dp1{                  
-            margin-right: 50%;
-        }
-       
-        .mmenu{
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-        }
-        .logo a{
-            padding-right: 5px;
-            margin-right: 0px;
-        }
-        p{
-            font-size: 20px;
-        }
-        
-    </style>
+    
     <body>
         <!--section 1 jc-->
         <section class="container-fluid background-section1">
@@ -71,9 +34,9 @@ $rando = $database-> getRandoById($id);
                     <img src="image/montagne2.png" class="img-fluid logo1" alt="img">
                 </div>
                 <div class="col-sm-12 col-lg-6 d-flex justify-content-around align-items-end">
-                    <a class="buttonDelete" href="process-delete.php?id=<?php echo $rando->getId(); ?>">Delete</a>
-                    <a class="buttonUpdate" href="updatePromenade.php?id=<?php echo $rando->getId(); ?>">Update</a>
-                </div>  
+                    <a class="badge badge-primary btn-sm" href="formulaire-create.php"<?php echo $rando->getId(); ?>">Create</a>
+                    <a class="badge badge-primary btn-sm" href="updatePromenade.php?id=<?php echo $rando->getId(); ?>">Update</a>
+                </div> 
             </div>
         </section>
         <!-- fin section 1 -->
@@ -98,7 +61,7 @@ $rando = $database-> getRandoById($id);
         </section>                      
           <!-- fin section 2-->  
 
-          <!-- debut section 3-->  
+          <!--section 3-->  
         <section>
                 <div class="container-fluid jumbotron jumbotron-fluid mmenu">
                     <div class="row col-sm-12 col-lg-6">       

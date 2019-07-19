@@ -16,12 +16,27 @@ $rando = $database->getRandoById($id);
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- style CSS -->
             <link rel="stylesheet" href="styleRando.css">
+            <link rel="stylesheet" href="styleindex.css">
         <!----police------>       
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
             <title>formulaire-create</title>
     </head>
-
-    <body>
+         <!-- section 1 jc-->
+     
+        <body>
+        <!--section 1 jc-->
+        <section class="container-fluid background-section1">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6 d-flex align-items-start justify-content-start">
+                    <img src="image/montagne2.png" class="img-fluid logo1" alt="img">
+                </div>
+                <div class="col-sm-12 col-lg-6 d-flex justify-content-around align-items-end">
+                    <a class="badge badge-primary btn-sm" href="listePromenade.php">Home</a>                   
+                </div>  
+            </div>
+        </section>
+        <!-- fin section 1 -->
+        
     <form action="process-update.php" method="post"enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $rando->getId() ?>"><br>
             <div class="text-justify text-center">
