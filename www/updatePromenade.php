@@ -1,9 +1,12 @@
 <?php
 //updatePromenade.php
-//À L'AIR DE FONCTIONNER
+//appel le fichiet database
 require_once ("DataBase.php");
+//créé un nouvel objet qui fait appel au contructeur database
 $database = new Database();
+//défini la requête par l'id
 $id = $_GET["id"];
+//créé une variable qui va prendre en compe la fonction get de la database
 $rando = $database->getRandoById($id);
 ?>
 <!DOCTYPE html>
@@ -66,15 +69,16 @@ $rando = $database->getRandoById($id);
                         <label for="Titre">Nom: </label>
                     </div>
                     <div class="col-75">
-                    <input type="text" id="Titre" name="Titre" value="<?php echo $rando->getTitre() ?>" required>
+                        <input type="text" id="Titre" name="Titre" value="<?php echo $rando->getTitre() ?>" required>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-25">
                         <label for="Auteur">Proposé par: </label>
                     </div>
                     <div class="col-75">
-                    <input type="text" id="Auteur" name="Auteur"  value="<?php echo $rando->getAuteur() ?>" required>
+                        <input type="text" id="Auteur" name="Auteur"  value="<?php echo $rando->getAuteur() ?>" required>
                     </div>
                 </div>
 
@@ -101,7 +105,7 @@ $rando = $database->getRandoById($id);
                         <label for="Depart">au départ de </label>
                     </div>
                     <div class="col-75 df-flex align-self-end mb-2">
-                    <input type="text" id="Depart" name="Depart" value="<?php echo $rando->getDepart() ?>" required>
+                        <input type="text" id="Depart" name="Depart" value="<?php echo $rando->getDepart() ?>" required>
                     </div>
                 </div>
 
@@ -110,7 +114,7 @@ $rando = $database->getRandoById($id);
                         <label for="Arrivee">et se termine à  </label>
                     </div>
                     <div class="col-75">
-                    <input type="text" id="Arrivee" name="Arrivee" value="<?php echo $rando->getArrivee() ?>" required>
+                        <input type="text" id="Arrivee" name="Arrivee" value="<?php echo $rando->getArrivee() ?>" required>
                     </div>
                 </div>
 

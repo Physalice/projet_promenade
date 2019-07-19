@@ -1,12 +1,12 @@
 <?php
 //listePormenade.php
-//liste pour la première page essayer de faire des vignettes
-//vérification OK
-// à faire HTML et CSS de mise en page
+
+
 
 require_once ("DataBase.php");
+//créer un nouvel objet qui fait appel au constructeur database
 $database = new DataBase();
-
+//créé une variable qui va prendre en compe la fonction get de la database
 $listePromenade = $database->getAllRando();
 ?>
 <!DOCTYPE html>
@@ -44,16 +44,18 @@ $listePromenade = $database->getAllRando();
              
         <section>
         <a href="process-create.php"> </a>
+        <!----boucle pour efficher les élément de la base de donnée------>
         <?php foreach($listePromenade as $rando){ ?>
-            <div class='card col-sm-6 col-md-4 m-3 p-3'>
+        <!----crée un containaire pour afficher les élément 1 à 1 et non en liste------>    
+            <div class='card col-sm-6 col-md-4 m-3 p-3'>   
                 <div class='row'>
                     <div class=' liste' >
-                        
+                        <!----sortir les get demandé enrobé dans le html-CSS----->
                         <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
                         <h1><?php echo $rando->getTitre() ?></h1>
-                        <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
-                        <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
-                        <a href="afficherpromenade.php?id=<?php echo $rando->getId()?>" ><p><button>Choisir</button></p></a>
+                        <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays() ?></p>
+                        <p class='auteur'> Créé par: <?php echo $rando->getAuteur() ?> </p>
+                        <a href="afficherpromenade.php?id=<?php echo $rando->getId() ?>" ><p><button>Choisir</button></p></a>
                             
                     </div> 
                 </div> 

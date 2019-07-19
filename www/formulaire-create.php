@@ -5,7 +5,9 @@
 
 
 require_once("DataBase.php");
+//créé un nouvel objet qui fait appel au contructeur database
 $database = new DataBase();
+//créé une variable qui va prendre en compe la fonction get de la database
 $rando = $database->getRandoById($id);
 ?>
 <!DOCTYPE html>

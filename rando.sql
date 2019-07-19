@@ -2,15 +2,18 @@
 ------------créer une base de donnée--------------
 CREATE DATABASE PMDDatabase;
 USE PMDDatabase;
-
+---------crée un utilisateur sans privilège
 CREATE USER "adminPMD"@"%" IDENTIFIED 
+-------avec un mot de passe
 BY "Calder@Vu@";
+------nouvelle requête pour donner des privilège à l'utilisateur
 GRANT ALL PRIVILEGES 
+-----sur la database tous les éléments gérer par l'adresse url de la database
 ON PMDDatabase.* TO "adminPMD"@"%";
 
 ----------créer une table Promenade------------
 CREATE TABLE Promenades (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT, --------clé primaire de lien avec d'autre table
   titre      VARCHAR (255),
   auteur     VARCHAR (255),
   cp         VARCHAR (10),
@@ -22,7 +25,8 @@ CREATE TABLE Promenades (
   itineraire VARCHAR (255)
  
 );
------------crée une nouvelle promenade-----------------
+-----------crée une nouvelle promenade-------les valeur sont donnée pour remplir la base de donnée qui ne peut pas être null----
+-------modifiable par la création d'objet en php------
 INSERT INTO Promenades (titre, auteur, cp, ville, pays, depart, arrivee, files, itineraire) 
 VALUES ('Moléson', "Nelson", "1017", "Nyon", "Suisse", "Bassin", "Col du faux", "URLimage", "blablablablablablabla");
 ------------mettre à jour une promenade-------------
@@ -36,7 +40,8 @@ SET titre="Moléson",
  arrivee="Col du faux", 
  files="URLimage", 
  itineraire="blablablablablablabla"
-WHERE id = 1
+WHERE id = 1    ----------------condition d'affichage de l'update 
+
 ------------selectionner un élément de liste par son id-----------
 SELECT p.id, 
       p.titre, 

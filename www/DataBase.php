@@ -6,7 +6,7 @@ class DataBase{
 //création de la connexion base de donnée    
     private $connexion;
     
-    public function __construct(){
+    public function __construct(){                               //inclure l'user et l'admin
         $PARAM_hote="mariadb";                     
         $PARAM_port="3306";                       
         $PRAM_nom_bd="PMDDatabase";           
@@ -14,29 +14,29 @@ class DataBase{
         $PARAM_mot_passe="Calder@Vu@";         
 
         try {
-            $this->connexion = new PDO(                         //utilisé l'attribut connection pour créer un nouveau PDO et ajouter que je travaille sur la charset=utf8
-            "mysql:host=".$PARAM_hote.";dbname=".$PRAM_nom_bd.";charset=utf8",
-            $PARAM_utilisateur,                               //essaye de faire le code qui est dans le TRY
+            $this->connexion = new PDO(                        //connexion à la base de donnée avec la classe PDO
+            "mysql:host=".$PARAM_hote.";dbname=".$PRAM_nom_bd.";charset=utf8", //option de la base de donneé ne pas oublier charset pour lire les accens
+            $PARAM_utilisateur,                                 //connexion avec les paramètres untilisateur et mot de passe
             $PARAM_mot_passe);
-        } catch(Exception $e) {                                  //si try echoue je stock l'exception dans $e
+        } catch(Exception $e) {                                 //si try echoue je stock l'exception dans $e
             echo "Erreur : ".$e->getMessage()."<br/>";         //affiche le message d'erreur avec le code
-            echo "N° : ".$e->getCode();                        //affiche le code de l'erreur
+            echo "N° : ".$e->getCode();                        //affiche la ligne de code de l'erreur
         }   
     }
-//visuel de la base de donnée
+    //lis les objet dans les colonne de la base de donnée
     public function getDBName(){
         return $this->connexion->query("SELECT DataBase()")->fetchColumn();
     }
-     //accèder en lecture à un attribut
+     //retourner (stock en back) cette connexion
     public function getConnexion(){                 
         return $this->connexion;
     }
 
-    //paramettrage des valeur pour l'insertion d'une nouvelle promenade
+    //paramettrage des valeurs pour l'insertion d'une nouvelle promenade
     public function insertRando($titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire){
         $pdoStatement = $this-> connexion-> prepare("INSERT INTO Promenades (titre, auteur, cp, ville, pays, depart, arrivee, files, itineraire)  
-                                                     VALUES (:paramTitre, :paramAuteur, :paramCp, :paramVille, :paramPays, :paramDepart, :paramArrivee, :paramFiles, :paramItineraire);");
-        $pdoStatement-> execute(array("paramTitre"=>$titre, 
+                                                     VALUES (:paramTitre, :paramAuteur, :paramCp, :paramVille, :paramPays, :paramDepart, :paramArrivee, :paramFiles, :paramItineraire);"); //crée des variable des requête SQL
+        $pdoStatement-> execute(array("paramTitre"=>$titre,      //défini les valeur aux variable par un tableau assiociatif de la clé et la variable SQL
                                         "paramAuteur"=>$auteur, 
                                         "paramCp"=>$cp, 
                                         "paramVille"=>$ville, 
@@ -52,12 +52,12 @@ class DataBase{
         return $idRAndo;
     }
 
-// changer les donnée de classPromenade  
+    // changer les donnée de classPromenade  
     public function updateRando($id, $titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $files, $itineraire){
         $pdoStatement = $this-> connexion-> prepare("UPDATE Promenades 
                                                      SET titre = :titreRando, auteur =:auteurRando, cp = :cpRando, ville =:villeRando, pays =:paysRando, depart =:departRando, arrivee =:arriveeRando, files =:filesRando, itineraire =:itineraireRando 
                                                      WHERE id = :idRando");
-        //execution de la requête et mapping des valeurs
+    //execution de la requête et mapping des valeurs
         $pdoStatement-> execute(array("titreRando"=>$titre, 
                                         "auteurRando"=>$auteur, 
                                         "cpRando"=>$cp, 
@@ -84,7 +84,8 @@ class DataBase{
             "SELECT id, titre, files, auteur, ville, pays, itineraire
              FROM Promenades");
         $pdoStatement->execute();
-        $listePromenade = $pdoStatement->fetchAll(PDO::FETCH_CLASS, "Promenade");
+        $listePromenade = $pdoStatement->fetchAll(PDO::FETCH_CLASS, "Promenade"); //Récupère une ligne depuis un jeu de résultats associé à l'objet PDOStatement. 
+                                                                                 //Le paramètre fetch_style détermine la façon dont PDO retourne la ligne. 
         return $listePromenade;
     }
     //affiche le profil d'une promenade -> récupération de la liste
@@ -95,30 +96,10 @@ class DataBase{
              WHERE id = :idRando"
         );
         $pdoStatement->execute(array("idRando" => $id));
-        $maRando = $pdoStatement->fetchObject("Promenade");
+        $maRando = $pdoStatement->fetchObject("Promenade");                     //idem fetchAll mais pour un seul objet
 
         return $maRando;
     }
-    /*
-    //affiche un élément de la liste 
-    public function getRando($id){
-        $pdoStatement = $this->connexion->prepare(
-        "SELECT id, titre, files, auteur, ville, pays, itineraire
-        FROM Promenades");
-        $pdoStatement->execute();
-        $listePromenade = $pdoStatement->fetchObject("Promenade");
-        return $listePromenade;
-    }
-    */
-
-
-    
 
 }//fin de classe
-
-
-
-    
-
-
 ?>
