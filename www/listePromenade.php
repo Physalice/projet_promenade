@@ -42,44 +42,25 @@ $listePromenade = $database->getAllRando();
           <!-- fin section 1 jc-->  
            <!--  section 2 --> 
              
-        <div class="card">
-           <div class="row">
-                <div class="col-md" 
-           <a href="process-create.php"> </a>
-            <?php foreach($listePromenade as $rando){            
-        
-                     echo "<div class='liste'>";
-                     echo '<a href="afficherpromenade.php?id='.$rando->getId().'"></a>'; ?>
-                     <div class="card">
-                     <img src=<?php echo $rando->getFiles()?> img.jpg" alt="montagne" style="width:100%">
-                     <h1><?php echo $rando->getTitre()?></h1>
-                     <p><?php  echo "Lieu: " .$rando->getVille() ." " .$rando->getPays()?></p>
-                     <p><?php echo $rando->getItineraire()?></p>
-                     <p class="auteur"><?php echo "Créé par: " .$rando->getAuteur()?></p> 
-                    
         <section>
-           <a href="process-create.php"> </a>
-            <?php foreach($listePromenade as $rando){ ?>
-                <div class='card col-sm-6 col-md-4 m-3 p-3'>
-                    <div class='row'>
-                        <div class=' liste' >
-                           
-                            <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
-                            <h1><?php echo $rando->getTitre() ?></h1>
-                            <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
-                            <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
-                            <a href='afficherpromenade.php'<?php $rando->getId()?> ><p><button>Choisir</button></p></a>
-                             
-                       </div> 
+        <a href="process-create.php"> </a>
+        <?php foreach($listePromenade as $rando){ ?>
+            <div class='card col-sm-6 col-md-4 m-3 p-3'>
+                <div class='row'>
+                    <div class=' liste' >
+                        
+                        <img src="<?php echo $rando->getFiles() ?>" alt='montagne' style="w-70">
+                        <h1><?php echo $rando->getTitre() ?></h1>
+                        <p>Lieu: <?php echo $rando->getVille() .'/' .$rando->getPays()?></p>
+                        <p class='auteur'> Créé par: <?php echo $rando->getAuteur()?> </p>
+                        <a href="afficherpromenade.php?id=<?php echo $rando->getId()?>" ><p><button>Choisir</button></p></a>
+                            
                     </div> 
-                </div>
-             <?php } ?>
-            
-            </section>
-
                 </div> 
             </div>
-        </div>
+            <?php } ?>
+        
+        </section>
         <!-- fin section 2 -->
  
          <!--section 3-->  
@@ -123,11 +104,3 @@ $listePromenade = $database->getAllRando();
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>   
     </body>
 </html>
-
-
-
-
-
-
-
-
