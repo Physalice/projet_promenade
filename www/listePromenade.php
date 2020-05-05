@@ -42,7 +42,7 @@ $listePromenade = $database->getAllRando();
           <!-- fin section 1 jc-->  
            <!--  section 2 --> 
              
-        <section>
+        <section class="d-flex flex-row flex-wrap justify-content-center">
         <a href="process-create.php"> </a>
         <!----boucle pour efficher les élément de la base de donnée------>
         <?php foreach($listePromenade as $rando){ ?>
@@ -67,11 +67,11 @@ $listePromenade = $database->getAllRando();
  
          <!--section 3-->  
          <section>
-                <div class="container-fluid jumbotron jumbotron-fluid mmenu">
-                    <div class="row col-sm-12 col-lg-6">       
-                        <ul style="list-style-type:none;">
-                            <li class="nav-item dropdown contact col-sm-12 col-lg-6">
-                                        <a class="nav-link dropdown-toggle dp1" data-toggle="dropdown" href="#">Contact</a>
+                <div class="container-fluid menu">
+                    <div class="d-flex flex-column align-content-center">       
+                        <ul>
+                            <li class="nav-item dropdown contact">
+                                        <a class="nav-link dropdown-toggle dp1" data-toggle="dropdown" href="#">Contact us</a>
                                 <div class="dropdown-menu"> 
                                     <form class="mx-3">
                                         <h2>Sign in</h2>
@@ -89,15 +89,54 @@ $listePromenade = $database->getAllRando();
                                 </div>
                             </li>
                         </ul>
+                        <ul>
+                            <li class="nav-item dropdown contact">
+                                        <a class="nav-link dropdown-toggle dp1" data-toggle="dropdown" href="#">Contactez-nous</a>
+                                <div class="dropdown-menu"> 
+                                    <form class="mx-3">
+                                        <h2>enregistrement</h2>
+                                        prénom:<br>
+                                        <input type="text" name="firstname" value="">
+                                        <br>
+                                        nom:<br>
+                                        <input type="text" name="lastname" value="">
+                                        <br><br>
+                                        mail:<br>
+                                        <input type="text" name="mail" value="">
+                                        <br><br>
+                                        <input type="submit" value="envoyer" class="bouton" onclick="alert('un mail vous à été envoyé')">
+                                    </form> 
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="nav-item dropdown contact">
+                                        <a class="nav-link dropdown-toggle dp1" data-toggle="dropdown" href="#">kontaktiere uns</a>
+                                <div class="dropdown-menu"> 
+                                    <form class="mx-3">
+                                        <h2>Einloggen</h2>
+                                        Vorname:<br>
+                                        <input type="text" name="firstname" value="">
+                                        <br>
+                                        Nachname:<br>
+                                        <input type="text" name="lastname" value="">
+                                        <br><br>
+                                        mail:<br>
+                                        <input type="text" name="mail" value="">
+                                        <br><br>
+                                        <input type="submit" value="einreichen" class="bouton" onclick="alert('Eine E-Mail wird an Sie gesendet')">
+                                    </form> 
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-start align-items-center logo">
+                            <!--- i = icones---->
+                            <a href="https://facebook.com/" target="_blank"><i class='fab fa-facebook-square' style='font-size:30px'></i></a>
+                            <a class="youtubeL" href="https://youtube.com/" target="_blank"><i class='fab fa-twitter-square' style='font-size:30px'></i></a>
+                            <a class="twitterL" href="https://twitter.com/" target="_blank"><i class='fab fa-youtube-square' style='font-size:30px'></i></a>            
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 d-flex justify-content-end align-items-end logo">
-                        <a href="https://facebook.com/" target="_blank"><i class='fab fa-facebook-square' style='font-size:30px'></i></a>
-                        <a class="youtubeL" href="https://youtube.com/" target="_blank"><i class='fab fa-twitter-square' style='font-size:30px'></i></a>
-                        <a class="twitterL" href="https://twitter.com/" target="_blank"><i class='fab fa-youtube-square' style='font-size:30px'></i></a>            
-                    </div>
-                </div>    
         </section>            
          <!-- fin section 3-->               
       

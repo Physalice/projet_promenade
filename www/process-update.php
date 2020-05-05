@@ -56,7 +56,7 @@ if(in_array($fileActualExt, $allowed)){
 require_once("DataBase.php");
 $database = new Database();
 
-// Appeler la fonction updateDog en lui passant les infos du formulaire
+// Appeler la fonction updateRando en lui passant les infos du formulaire
 // updateRando($id, $titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $img_pass, $itineraire)
 $database->updateRando($id, $titre, $auteur, $cp, $ville, $pays, $depart, $arrivee, $fileDestination, $itineraire);
 

@@ -48,14 +48,12 @@ $rando = $database->getRandoById($id);
             </div>
             <div class="container">
                 
-              
+              <!---image--->
                 <div class="row d-flex justify-content-center m-6 p-3">
                    <div class="file">
                         <img src="<?php echo $rando->getFiles()?>">
                     </div>
                 </div>
-                
-                
                 <div class="row">
                     <div class="col-25">
                         <label for="files">Changez l'image</label>
@@ -64,6 +62,7 @@ $rando = $database->getRandoById($id);
                         <input type="file" id="filesRando" name="files"required>
                     </div>
                 </div>
+                <!---champs d'info--->
                 <div class="row">
                     <div class="col-25">
                         <label for="Titre">Nom: </label>
@@ -126,7 +125,7 @@ $rando = $database->getRandoById($id);
                         <textarea type="text" id="Itineraire" name="Itineraire" required><?php echo $rando->getItineraire() ?></textarea>
                     </div>
                 </div>
-
+                 <!---bouton--->
                 <div class="button">
                     <input type="submit" value="Mettre à jour">
                 </div>
